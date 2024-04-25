@@ -8,8 +8,7 @@
 * 던전에서 몬스터를 처치하고 강해져야 합니다.
 * We need to get rid of monsters at Dungeon and be strong
 
-버그
-######
+###### 버그
 *  여러개의 아이템 착용시 오류발생
 *  Error when wearing multiple items
 
