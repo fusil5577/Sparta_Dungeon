@@ -10,3 +10,5 @@
 버그
 *  여러개의 아이템 착용시 오류발생
 *  Error when wearing multiple items
+개발 환경
+* C# 및 Visual Studio
