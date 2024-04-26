@@ -7,17 +7,17 @@ internal class ConsoleUtility
     public static void PrintGameHeader()
     {
         Console.WriteLine("======================================================");
-        Console.WriteLine("     _____ _____        _____ _______           ");
-        Console.WriteLine("    / ____|  __ \\ /\\   |  __ \\__   __|/\\  ");
-        Console.WriteLine("   | (___ | |__) /  \\  | |__) | | |  /  \\      ");
-        Console.WriteLine("    \\___ \\|  ___/ /\\ \\ |  _  /  | | / /\\ \\      ");
-        Console.WriteLine("    ____) | |  / ____ \\| | \\ \\  | |/ ____ \\     ");
-        Console.WriteLine("  _|_____/|_| /_/   _\\_\\_|__\\_\\_|_/_/___ \\_\\  _ ");
-        Console.WriteLine(" |  __ \\| |  | | \\ | |/ ____|  ____/ __ \\| \\ | |");
-        Console.WriteLine(" | |  | | |  | |  \\| | |  __| |__ | |  | |  \\| |");
-        Console.WriteLine(" | |  | | |  | | . ` | | |_ |  __|| |  | | . ` |");
-        Console.WriteLine(" | |__| | |__| | |\\  | |__| | |___| |__| | |\\  |");
-        Console.WriteLine(" |_____/ \\____/|_| \\_|\\_____|______\\____/|_| \\_|");
+        Console.WriteLine("     _____ _____   _____  _______  _______  _____     ");
+        Console.WriteLine("    / ____|  __  |  /| | |   __  ||__   __|/ /| |");
+        Console.WriteLine("   | (___ | |__) /   | | |  |__) |   | |  /   | |  ");
+        Console.WriteLine("    | ___ |  ___/ /__| | |   _   /   | | / /__| |      ");
+        Console.WriteLine("    ____) | |  / ____| | |  |  | |   | |/ ____| |   ");
+        Console.WriteLine("  _|_____/|_| /_/   _|_|_|__|_ |_|_ _|_|__ |_ | |_ ");
+        Console.WriteLine(" |  __ || |  | | |  | |  ____|  ____/ __ ||  |  | |");
+        Console.WriteLine(" | |  | | |  | |  | | | | ___| |_  | |  | | | | | |");
+        Console.WriteLine(" | |  | | |  | | . `| | ||_  |  _||| |  | | || || |");
+        Console.WriteLine(" | |__| | |__| | |||  | |__| | |___| |__| | | | | |");
+        Console.WriteLine(" |_____/||____/|_| ||_| _____|______|____/|_|  | _|");
         Console.WriteLine("======================================================");
         Console.WriteLine("                아무키나 누르세요...");
         Console.WriteLine("======================================================");
