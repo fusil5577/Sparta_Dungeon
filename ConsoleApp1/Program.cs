@@ -163,7 +163,6 @@ public class GameManager
                 InventoryMenu();
                 break;
             default:
-
                 inventory[keyInput - 1].ToggleEquipStates(inventory);
                 EquipMenu();
                 break;
