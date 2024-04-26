@@ -220,7 +220,7 @@ public class GameManager
 
         for (int i = 0; i < inventory.Count; i++)
         {
-            inventory[i].PrintItemStatDescription();
+            inventory[i].PrintStoreItemDescription(true, i + 1);
         }
 
         Console.WriteLine();
@@ -235,7 +235,10 @@ public class GameManager
                 StoreMenu();
                 break;
             default:
-                
+                player.Gold += inventory[keyInput - 1].Price; //돈이 올라감
+                inventory[keyInput - 1].TogglePurchase(); //선택한 아이템을 보유중에서 판매중으로 바꿈
+                inventory.Remove(inventory[keyInput - 1]); //인벤토리에서 그 아이템을 삭제함
+                SellMenu();
                 break;
         }
     }
@@ -283,7 +286,7 @@ public class GameManager
                 else if (player.Gold >= storeInventory[keyInput-1].Price)
                 {
                     player.Gold -= storeInventory[keyInput -1].Price;
-                    storeInventory[keyInput - 1].Purchase();
+                    storeInventory[keyInput - 1].TogglePurchase();
                     inventory.Add(storeInventory[keyInput -1]);
                     PurchaseMenu();
                 }

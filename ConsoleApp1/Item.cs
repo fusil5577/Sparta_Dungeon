@@ -98,7 +98,7 @@ internal class Item
         Console.Write(" | ");
         if (IsPurchased)
         {
-            Console.WriteLine("구매완료");
+            Console.WriteLine("보유중");
         }
         else
         {
@@ -106,8 +106,8 @@ internal class Item
         }
     }
 
-    internal void Purchase()
+    internal void TogglePurchase()
     {
-        IsPurchased = true;
+        IsPurchased = !IsPurchased;
     }
 }
