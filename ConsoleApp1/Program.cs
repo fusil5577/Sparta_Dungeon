@@ -4,6 +4,7 @@
 
 
 
+
 public class GameManager
 {
     private Player player;
@@ -52,6 +53,7 @@ public class GameManager
         Console.WriteLine("1. 상태보기");
         Console.WriteLine("2. 인벤토리");
         Console.WriteLine("3. 상점");
+        Console.WriteLine("4. 던전입장");
         Console.WriteLine();
 
         int choice = ConsoleUtility.PromotMenuChoice(1, 3);
@@ -67,8 +69,80 @@ public class GameManager
             case 3:
                 StoreMenu(); //상점
                 break;
+            case 4:
+                DungeonMenu();
+                break;
         }
         MainManu(); // 혹시나 몰라서 받아주는 부분
+    }
+
+    private void DungeonMenu()
+    {
+        Console.Clear();
+
+        ConsoleUtility.ShowTitle("■ 던전입구 ■");
+        Console.WriteLine("가고 싶은 던전을 선택해주세요..");
+        Console.WriteLine();
+        Console.WriteLine("★☆☆");
+        Console.WriteLine("1. 깊은 숲");
+
+        Console.WriteLine();
+        Console.WriteLine("★★☆");
+        Console.WriteLine("2. 설산");
+
+        Console.WriteLine();
+        Console.WriteLine("★★★");
+        Console.WriteLine("3. 용암동굴");
+
+        Console.WriteLine();
+        Console.WriteLine("0. 뒤로가기");
+        Console.WriteLine();
+
+        int choice = ConsoleUtility.PromotMenuChoice(0, 3);
+
+        switch (choice)
+        {
+            case 0:
+                MainManu();
+                break;
+            case 1:
+                if (player.Def > 5)
+                {
+                    player.Gold += 1000;
+                    Console.WriteLine("깊은 숲에 입장하였습니다.");
+                    Console.WriteLine("보상으로 1000골드를 획득하였습니다.");
+                }
+                else
+                {
+                    Console.WriteLine("방어력이 부족하여 깊은 숲에 입장할 수 없습니다.");
+                }
+                break;
+            case 2:
+                if (player.Def > 10)
+                {
+                    player.Gold += 1700;
+                    Console.WriteLine("설산에 입장하였습니다.");
+                    Console.WriteLine("보상으로 1700골드를 획득하였습니다.");
+                }
+                else
+                {
+                    Console.WriteLine("방어력이 부족하여 설산에 입장할 수 없습니다.");
+                }
+                break;
+            case 3:
+                if (player.Def > 15)
+                {
+                    player.Gold += 2500;
+                    Console.WriteLine("용암동굴에 입장하였습니다.");
+                    Console.WriteLine("보상으로 2500골드를 획득하였습니다.");
+                }
+                else
+                {
+                    Console.WriteLine("방어력이 부족하여 용암동굴에 입장할 수 없습니다.");
+                }
+                break;
+        }
+        MainManu();
     }
 
     private void StatusMenu()
@@ -283,11 +357,11 @@ public class GameManager
                 {
                     PurchaseMenu("이미 구매한 아이템입니다.");
                 }
-                else if (player.Gold >= storeInventory[keyInput-1].Price)
+                else if (player.Gold >= storeInventory[keyInput - 1].Price)
                 {
-                    player.Gold -= storeInventory[keyInput -1].Price;
+                    player.Gold -= storeInventory[keyInput - 1].Price;
                     storeInventory[keyInput - 1].TogglePurchase();
-                    inventory.Add(storeInventory[keyInput -1]);
+                    inventory.Add(storeInventory[keyInput - 1]);
                     PurchaseMenu();
                 }
                 else
