@@ -74,7 +74,7 @@ internal class Item
     {
         if (!IsEquipped)
         {
-            // 동일한 ItemType을 가진 이미 장착된 아이템이 있는지 검사
+                     // 동일한 ItemType을 가진 이미 장착된 아이템이 있는지 검사
             bool canEquip = true;
             foreach (var equippedItem in inventory.Where(item => item.IsEquipped && item.Type == Type))
             {
@@ -82,7 +82,7 @@ internal class Item
                 break;
             }
 
-            // 동일한 ItemType을 가진 이미 장착된 아이템이 없으면 장착 가능
+                      // 동일한 ItemType을 가진 이미 장착된 아이템이 없으면 장착 가능
             if (canEquip)
             {
                 IsEquipped = true;

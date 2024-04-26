@@ -19,7 +19,7 @@ internal class ConsoleUtility
         Console.WriteLine(" | |__| | |__| | |||  | |__| | |___| |__| | | | | |");
         Console.WriteLine(" |_____/||____/|_| ||_| _____|______|____/|_|  | _|");
         Console.WriteLine("======================================================");
-        Console.WriteLine("                아무키나 누르세요...");
+        Console.WriteLine("                               아무키나 누르세요...");
         Console.WriteLine("======================================================");
         Console.ReadKey();
     }
