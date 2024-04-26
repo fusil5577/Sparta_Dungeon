@@ -3,6 +3,7 @@
 
 
 
+
 public class GameManager
 {
     private Player player;
@@ -188,15 +189,53 @@ public class GameManager
         Console.WriteLine();
         Console.WriteLine("0. 나가기");
         Console.WriteLine("1. 아이템 구매");
+        Console.WriteLine("2. 아이템 판매");
         Console.WriteLine();
 
-        switch (ConsoleUtility.PromotMenuChoice(0, 1))
+        switch (ConsoleUtility.PromotMenuChoice(0, 2))
         {
             case 0:
                 MainManu();
                 break;
             case 1:
                 PurchaseMenu();
+                break;
+            case 2:
+                SellMenu();
+                break;
+        }
+    }
+
+    private void SellMenu()
+    {
+        Console.Clear();
+
+        ConsoleUtility.ShowTitle("■ 아이템 판매 ■");
+        Console.WriteLine("보유중인 아이템을 판매 할 수 있습니다.");
+        Console.WriteLine();
+        Console.WriteLine("[보유 골드]");
+        ConsoleUtility.PrintTextHighlights("", player.Gold.ToString(), " G");
+        Console.WriteLine();
+        Console.WriteLine("[아이템 목록]");
+
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            inventory[i].PrintItemStatDescription();
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("0. 나가기");
+        Console.WriteLine();
+
+        int keyInput = ConsoleUtility.PromotMenuChoice(0, inventory.Count);
+
+        switch (keyInput)
+        {
+            case 0:
+                StoreMenu();
+                break;
+            default:
+                
                 break;
         }
     }
@@ -212,8 +251,8 @@ public class GameManager
 
         Console.Clear();
 
-        ConsoleUtility.ShowTitle("■ 상점 ■");
-        Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
+        ConsoleUtility.ShowTitle("■ 아이템 구매 ■");
+        Console.WriteLine("필요한 아이템을 구매 할 수 있습니다.");
         Console.WriteLine();
         Console.WriteLine("[보유 골드]");
         ConsoleUtility.PrintTextHighlights("", player.Gold.ToString(), " G");
