@@ -2,6 +2,7 @@
 
 
 
+
 public enum ItemType
 {
     WEAPON,
@@ -69,9 +70,32 @@ internal class Item
         Console.WriteLine(Desc);
     }
 
-    internal void ToggleEquipStates()
+    internal void ToggleEquipStates(List<Item> inventory)
     {
-        IsEquipped = !IsEquipped;
+        if (!IsEquipped)
+        {
+            // 동일한 ItemType을 가진 이미 장착된 아이템이 있는지 검사
+            bool canEquip = true;
+            foreach (var equippedItem in inventory.Where(item => item.IsEquipped && item.Type == Type))
+            {
+                canEquip = false;
+                break;
+            }
+
+            // 동일한 ItemType을 가진 이미 장착된 아이템이 없으면 장착 가능
+            if (canEquip)
+            {
+                IsEquipped = true;
+            }
+            else
+            {
+                Console.WriteLine("동일한 종류의 아이템이 이미 장착되어 있습니다.");
+            }
+        }
+        else
+        {
+            IsEquipped = false;
+        }
     }
 
     internal void PrintStoreItemDescription(bool withNumber = false, int idx = 0)
